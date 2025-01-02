@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f4f4f9;
+            direction: rtl;
+            text-align: right;
+        }
+        .container {
+            max-width: 400px;
+            margin: auto;
+            background: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            font-weight: bold;
+            display: block;
+            margin-bottom: 5px;
+        }
+        .form-group input {
+            width: 100%;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-group input[type="submit"] {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .form-group input[type="submit"]:hover {
+            background-color: #0056b3;
+        }
+        .error {
+            color: red;
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>تسجيل الدخول</h1>
+
+    <form id="loginForm">
+        <div class="form-group">
+            <label for="university">اسم الجامعة:</label>
+            <select id="university" required>
+                <option value="جامعة الناصر">جامعة الناصر</option>
+                <!-- يمكن إضافة خيارات أخرى للجامعات هنا -->
+            </select>
+        </div>
+        <div class="form-group">
+            <label for="studentId">الرقم الأكاديمي:</label>
+            <input type="text" id="studentId" required>
+        </div>
+        <div class="form-group">
+            <label for="password">كلمة المرور:</label>
+            <input type="password" id="password" required>
+        </div>
+        <div class="form-group">
+            <input type="submit" value="دخول">
+        </div>
+        <p class="error" id="errorMessage"></p>
+    </form>
+</div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var studentId = document.getElementById('studentId').value;
+        var password = document.getElementById('password').value;
+        
+        // التحقق من الرقم الأكاديمي وكلمة المرور
+        if (studentId === "2024130560" && password === "Oxsn771988982") {
+            window.location.href = "oxsn.html";  // إعادة التوجيه إلى صفحة النتائج
+        } else {
+            document.getElementById('errorMessage').textContent = "الرقم الأكاديمي أو كلمة المرور غير صحيحة.";
+        }
+    });
+</script>
+
+</body>
+</html>
